@@ -1,0 +1,79 @@
+# Airflow Configuration File
+
+core:
+  # Define the Airflow executor type: SequentialExecutor, LocalExecutor, CeleryExecutor, or KubernetesExecutor
+  executor: LocalExecutor  # Use CeleryExecutor for distributed task execution
+
+  # The base URL of the Airflow web server
+  base_url: http://localhost:8080
+
+  # Specify a Fernet key for secure storage of credentials in the metadata database
+  fernet_key: 'your_fernet_key_here'  # Replace with a generated Fernet key for production
+
+  # Default timezone for Airflow
+  default_timezone: 'UTC'
+
+# Webserver configuration
+webserver:
+  # Webserver port
+  web_server_port: 8080
+
+  # Webserver worker refresh batch size
+  worker_refresh_batch_size: 1
+
+  # Worker refresh interval
+  worker_refresh_interval: 30
+
+  # Secret key for session management
+  secret_key: 'your_secret_key_here'  # Replace with a secure key for production
+
+# Database settings
+database:
+  # Database connection URI
+  sql_alchemy_conn: postgresql+psycopg2://airflow:airflow@airflow-postgres:5432/airflow
+
+  # Set the pool size for SQLAlchemy connections
+  sql_alchemy_pool_size: 5
+
+  # Connection timeout for database connections
+  sql_alchemy_pool_recycle: 1800
+
+# Logging settings
+logging:
+  # Set the log level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  log_level: INFO
+
+  # Format for log messages
+  log_format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+
+  # Directory for storing log files
+  base_log_folder: /opt/airflow/logs
+
+  # Remote logging (if enabled, requires additional setup)
+  remote_logging: false
+
+# Scheduler settings
+scheduler:
+  # Number of processes for the scheduler to use
+  scheduler_heartbeat_sec: 5
+
+  # DAG file processor timeout
+  dag_dir_list_interval: 300
+
+  # DAG parsing process timeout
+  dag_file_processor_timeout: 50
+
+# Security settings
+security:
+  # Configure RBAC (Role-Based Access Control)
+  rbac: true
+
+# Email settings (if needed for alerts)
+smtp:
+  smtp_host: "smtp.example.com"
+  smtp_starttls: true
+  smtp_ssl: false
+  smtp_user: "airflow@example.com"
+  smtp_port: 587
+  smtp_password: "your_email_password_here"
+  smtp_mail_from: "airflow@example.com"
