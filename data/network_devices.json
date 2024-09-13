@@ -1,0 +1,52 @@
+[
+    {
+        "name": "Cisco ISR 4431 Integrated Services Router",
+        "type": "Router",
+        "cost": 2500,
+        "specifications": {
+            "Bandwidth": "500 Mbps",
+            "WAN Optimization": true,
+            "Cloud Integration": true
+        }
+    },
+    {
+        "name": "Cisco Catalyst 2960-X Series Switch",
+        "type": "Switch",
+        "cost": 1500,
+        "specifications": {
+            "VLAN Support": true,
+            "QoS": true,
+            "Managed": true
+        }
+    },
+    {
+        "name": "Cisco Aironet 2800 Series Access Point",
+        "type": "Wireless Access Point",
+        "cost": 800,
+        "specifications": {
+            "WiFi Standard": "802.11ac Wave 2",
+            "Security": "WPA3",
+            "Max Users": 200
+        }
+    },
+    {
+        "name": "Cisco Firepower 1000 Series Firewall",
+        "type": "Firewall",
+        "cost": 3500,
+        "specifications": {
+            "Threat Protection": true,
+            "VPN Support": true,
+            "Intrusion Prevention": true
+        }
+    },
+    {
+        "name": "Cisco Prime Infrastructure",
+        "type": "Network Management Tool",
+        "cost": 4000,
+        "specifications": {
+            "Real-time Monitoring": true,
+            "Automated Troubleshooting": true,
+            "Analytics": true
+        }
+    }
+]
