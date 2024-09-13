@@ -1,0 +1,31 @@
+# Prometheus Configuration File
+
+global:
+  scrape_interval: 15s  # Default scrape interval
+  evaluation_interval: 15s  # How frequently to evaluate rules
+
+scrape_configs:
+  # Scrape configuration for Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+  # Scrape configuration for Kafka metrics
+  - job_name: 'kafka'
+    static_configs:
+      - targets: ['kafka-broker:9092']  # Replace 'kafka-broker' with the actual broker address
+
+  # Scrape configuration for Spark metrics
+  - job_name: 'spark'
+    static_configs:
+      - targets: ['spark-master:8080', 'spark-worker-1:8081', 'spark-worker-2:8081']  # Spark Master and Worker nodes
+
+  # Scrape configuration for Hadoop metrics
+  - job_name: 'hadoop'
+    static_configs:
+      - targets: ['namenode:9870', 'datanode:9864']  # Replace with actual Hadoop Namenode and Datanode addresses
+
+  # Scrape configuration for Flask API metrics
+  - job_name: 'api'
+    static_configs:
+      - targets: ['api:5000']  # Replace 'api' with actual API service address
