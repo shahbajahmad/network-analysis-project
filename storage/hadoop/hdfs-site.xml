@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- HDFS Configuration File -->
+    
+    <!-- Replication Factor -->
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value> <!-- Default replication factor (adjust based on your cluster) -->
+        <description>Default block replication.</description>
+    </property>
+
+    <!-- HDFS Block Size -->
+    <property>
+        <name>dfs.blocksize</name>
+        <value>134217728</value> <!-- Block size of 128 MB -->
+        <description>Block size for HDFS files.</description>
+    </property>
+
+    <!-- Namenode Directory -->
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///var/lib/hadoop-hdfs/cache/${user.name}/dfs/name</value>
+        <description>Determines where on the local filesystem the DFS name node should store the name table.</description>
+    </property>
+
+    <!-- Datanode Directory -->
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///var/lib/hadoop-hdfs/cache/${user.name}/dfs/data</value>
+        <description>Determines where on the local filesystem an individual DFS data node should store its blocks.</description>
+    </property>
+</configuration>
