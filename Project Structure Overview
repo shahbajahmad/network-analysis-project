@@ -1,0 +1,76 @@
+network-analysis-project/
+│
+├── data/
+│   └── network_devices.json                  # Sample data file containing network device details
+│
+├── ingestion/
+│   ├── kafka/
+│   │   ├── Dockerfile                        # Dockerfile for Kafka setup
+│   │   ├── docker-compose.yml                # Docker Compose file for Kafka and Zookeeper
+│   │   ├── kafka_producer.py                 # Python script to produce messages to Kafka
+│   │   └── kafka_consumer.py                 # Python script to consume messages from Kafka
+│   └── config/
+│       └── kafka_config.yaml                 # Configuration file for Kafka
+│
+├── storage/
+│   ├── hadoop/
+│   │   ├── Dockerfile                        # Dockerfile for Hadoop setup
+│   │   ├── core-site.xml                     # Configuration file for Hadoop core settings
+│   │   ├── hdfs-site.xml                     # Configuration file for HDFS settings
+│   │   └── docker-compose.yml                # Docker Compose file for Hadoop components
+│   └── scripts/
+│       └── upload_to_hdfs.py                 # Python script to upload data to HDFS
+│
+├── processing/
+│   ├── spark/
+│   │   ├── Dockerfile                        # Dockerfile for Spark setup
+│   │   ├── docker-compose.yml                # Docker Compose file for Spark cluster
+│   │   └── spark_job.py                      # Python script for Spark ETL jobs
+│   └── config/
+│       └── spark_config.yaml                 # Configuration file for Spark jobs
+│
+├── delivery/
+│   ├── api/
+│   │   ├── Dockerfile                        # Dockerfile for REST API setup
+│   │   ├── requirements.txt                  # Python dependencies for Flask API
+│   │   └── app.py                            # Flask/FastAPI application to expose processed data
+│   └── config/
+│       └── api_config.yaml                   # Configuration file for API
+│
+├── orchestration/
+│   ├── airflow/
+│   │   ├── Dockerfile                        # Dockerfile for Apache Airflow setup
+│   │   ├── docker-compose.yml                # Docker Compose file for Airflow components
+│   │   └── dags/
+│   │       └── data_pipeline_dag.py          # Airflow DAG file to orchestrate the entire data pipeline
+│   └── config/
+│       └── airflow_config.yaml               # Configuration file for Airflow
+│
+├── monitoring/
+│   ├── prometheus/
+│   │   ├── prometheus.yml                    # Configuration file for Prometheus monitoring
+│   │   └── Dockerfile                        # Dockerfile for Prometheus setup
+│   ├── grafana/
+│   │   ├── Dockerfile                        # Dockerfile for Grafana setup
+│   │   ├── grafana.ini                       # Configuration file for Grafana
+│   │   └── dashboards/
+│   │       └── dashboard.json                # JSON file for Grafana dashboard configuration
+│   └── docker-compose.yml                    # Docker Compose file for Prometheus and Grafana setup
+│
+├── models/
+│   ├── network_device.py                     # Python class definition for NetworkDevice
+│   └── data_handler.py                       # Python utility class for handling data operations
+│
+├── analysis/
+│   ├── network_analysis.py                   # Python script to analyze network performance
+│   ├── proposal_generator.py                 # Python script to generate network architecture proposals
+│   └── security_evaluation.py                # Python script to evaluate network security
+│
+├── utils/
+│   ├── db_utils.py                           # Python utility functions for database connections
+│   ├── logging_utils.py                      # Python utility functions for logging
+│   └── data_validation.py                    # Python utility functions for data validation
+│
+├── docker-compose.yml                        # Main Docker Compose file to bring up all services
+├── README.md                                  # Documentation for the project setup and usage
+└── requirements.txt                           # Python dependencies for the entire project
