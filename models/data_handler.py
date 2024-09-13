@@ -58,4 +58,4 @@ class DataHandler:
                 log_file.write(message + "\n")
             print(f"Message successfully appended to log '{log_filename}'.")
         except IOError as e:
-            print(f"Error: Failed to write to the log file '{log_filename}'. {e}")
+            print(f"Error: Failed to write to the log file '{log_filename}'. {e}") 
