@@ -1,10 +1,22 @@
-from models.data_handler import DataHandler
-
-# Load network device data
-devices = DataHandler.load_device_data('data/network_devices.json')
-
-# Check if data is loaded successfully
-if devices:
-    print("Loaded devices successfully.")
-else:
-    print("Failed to load devices.")
+[
+    {
+        "name": "Cisco ISR 4431 Integrated Services Router",
+        "type": "Router",
+        "cost": 2500,
+        "specifications": {
+            "Bandwidth": "500 Mbps",
+            "WAN Optimization": true,
+            "Cloud Integration": true
+        }
+    },
+    {
+        "name": "Cisco Catalyst 2960-X Series Switch",
+        "type": "Switch",
+        "cost": 1500,
+        "specifications": {
+            "VLAN Support": true,
+            "QoS": true,
+            "Managed": true
+        }
+    }
+]
