@@ -1,0 +1,32 @@
+# API Configuration File
+
+# Server settings
+server:
+  host: "0.0.0.0"     # Host to run the API server on (0.0.0.0 to allow all incoming requests)
+  port: 5000           # Port to run the API server on
+
+# Logging settings
+logging:
+  level: "INFO"        # Logging level (DEBUG, INFO, WARNING, ERROR, CRITICAL)
+  log_file: "data/logs/api_access.log"  # Path to the log file for API requests
+
+# Application settings
+application:
+  debug: false         # Enable or disable debug mode
+  secret_key: "your_secret_key_here"  # Secret key for session management and security
+
+# Data settings
+data:
+  output_path: "hdfs://namenode:9000/output/network_analysis"  # Output data path in HDFS
+  max_records_per_request: 100  # Maximum number of records to return per API request
+
+# Rate limiting settings
+rate_limit:
+  enabled: true         # Enable or disable rate limiting
+  limit: "100/hour"     # Rate limit in the format (requests/time)
+
+# CORS settings
+cors:
+  enabled: true         # Enable or disable Cross-Origin Resource Sharing (CORS)
+  allowed_origins:
+    - "http://localhost:3000"  # Example of allowed origin for a frontend application
