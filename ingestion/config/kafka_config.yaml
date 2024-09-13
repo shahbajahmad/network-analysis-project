@@ -1,0 +1,23 @@
+# Kafka Configuration File
+
+# List of bootstrap servers to connect to the Kafka cluster
+bootstrap_servers:
+  - 'localhost:9092'  # Replace 'localhost' with the appropriate server address if running on a different machine or environment
+
+# The Kafka topic to which the producer will send messages and from which the consumer will consume messages
+topic: 'network_devices'
+
+# Consumer Group ID for the Kafka consumer
+consumer_group_id: 'network-analysis-group'
+
+# Auto offset reset policy for Kafka consumer (earliest or latest)
+auto_offset_reset: 'earliest'
+
+# Enable or disable auto commit for Kafka consumer
+enable_auto_commit: true
+
+# Additional settings (if needed, uncomment and configure accordingly)
+# security_protocol: 'PLAINTEXT'
+# sasl_mechanism: 'PLAIN'
+# sasl_username: 'your_username'
+# sasl_password: 'your_password'
