@@ -1,0 +1,40 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "panels": [
+    {
+      "type": "graph",
+      "title": "CPU Usage",
+      "targets": [
+        {
+          "expr": "rate(node_cpu_seconds_total[5m])",
+          "legendFormat": "{{cpu}}"
+        }
+      ]
+    },
+    {
+      "type": "graph",
+      "title": "Memory Usage",
+      "targets": [
+        {
+          "expr": "node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes * 100",
+          "legendFormat": "Available Memory"
+        }
+      ]
+    }
+  ],
+  "refresh": "5s",
+  "schemaVersion": 18,
+  "version": 1
+}
