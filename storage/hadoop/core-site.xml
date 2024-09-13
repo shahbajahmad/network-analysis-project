@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<configuration>
+    <!-- Hadoop Core Configuration File -->
+    
+    <!-- Set the default file system URI -->
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://namenode:9000</value> <!-- Replace 'namenode' with the actual Namenode address if different -->
+        <description>NameNode URI</description>
+    </property>
+
+    <!-- I/O File Buffer Size -->
+    <property>
+        <name>io.file.buffer.size</name>
+        <value>131072</value> <!-- Buffer size of 128 KB -->
+        <description>File Buffer Size</description>
+    </property>
+
+    <!-- Hadoop Temporary Directory -->
+    <property>
+        <name>hadoop.tmp.dir</name>
+        <value>/tmp/hadoop-${user.name}</value>
+        <description>A base for other temporary directories.</description>
+    </property>
+</configuration>
